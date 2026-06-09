@@ -387,24 +387,39 @@
   <script>
     const unlockDate = new Date('June 11, 2026 00:00:00').getTime();
 
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = unlockDate - now;
+const timer = setInterval(() => {
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const now = new Date().getTime();
+  const distance = unlockDate - now;
 
-      document.getElementById('days').innerHTML = days;
-      document.getElementById('hours').innerHTML = hours;
-      document.getElementById('minutes').innerHTML = minutes;
-      document.getElementById('seconds').innerHTML = seconds;
+  if (distance <= 0) {
 
-      // Untuk testing sementara, surprise page langsung ditampilkan
-      document.getElementById('birthday-surprise').style.display = 'flex';
-    }, 1000);
+    clearInterval(timer);
 
+    document.getElementById('days').innerHTML = '0';
+    document.getElementById('hours').innerHTML = '0';
+    document.getElementById('minutes').innerHTML = '0';
+    document.getElementById('seconds').innerHTML = '0';
+
+    document.getElementById('unlockBtn').style.display = 'inline-block';
+
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60))
+    / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60))
+    / 1000);
+
+  document.getElementById('days').innerHTML = days;
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+
+}, 1000);
     function showLetter() {
       document.getElementById('letter').style.display = 'block';
     }
