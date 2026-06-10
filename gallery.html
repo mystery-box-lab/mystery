@@ -113,6 +113,157 @@ section {
       animation: flicker 0.2s infinite alternate;
       box-shadow: 0 0 20px #ffd54f;
     }
+    @keyframes flicker {
+      from {
+        transform: translateX(-1px) scale(1);
+        opacity: 0.8;
+      }
+      to {
+        transform: translateX(1px) scale(1.1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes floatCake {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes candleMove {
+      0% {
+        transform: rotate(-2deg);
+      }
+      50% {
+        transform: rotate(2deg);
+      }
+      100% {
+        transform: rotate(-2deg);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        filter: drop-shadow(0 0 5px #fff);
+      }
+      to {
+        filter: drop-shadow(0 0 25px #fff8b0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: #ffffff;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      font-size: 4rem;
+      font-family: 'Dancing Script', cursive;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #fffdfd;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #ff5e9c;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #ffe3ee;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.28);
+      padding: 20px;
+      border-radius: 20px;
+      min-width: 120px;
+    }
+
+    .time-box h3 {
+      font-size: 2rem;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 20px;
+      opacity: 0.9;
+    }
+
+    .letter {
+      margin-top: 30px;
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    footer {
+      text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+      text-align: center;
+      padding: 30px;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+
+      .time-box {
+        min-width: 90px;
+      }
+    }
   
 h1{
     text-align:center;
